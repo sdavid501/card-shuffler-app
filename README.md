@@ -9,7 +9,7 @@ deck and every hand being drawn is taken from a full deck.
 Four Filters - The four filters should allow you to filter by the following:
 
 - Possible card Suit (spade, heart, club, diamond -- multi-selection preferred),
-- # of Cards in a hand (1-52),
+- number of Cards in a hand (1-52),
 - Max card Value (e.g.: No cards larger than a Jack),
 - Min Card Value (e.g.: No cards lower than a 4).
 
