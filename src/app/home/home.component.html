@@ -1,0 +1,42 @@
+<img width="100" alt="card" [src]="image_source" 
+[@cardAnimator]="animationState"
+(@cardAnimator.done)="resetAnimation()">
+<form [formGroup]="cardForm">
+  <div class="filter">
+  <h6>Possible Card Suit</h6>
+  <div formGroupName="suit">
+    <label>
+      <input type="checkbox" (change) = "updateChecks('clubs', $event.target.checked)" formControlName="clubs" />
+      <span>Club</span>
+    </label>
+    <label>
+      <input type="checkbox" (change) = "updateChecks('diamonds', $event.target.checked)" formControlName="diamonds" />
+      <span>Diamond</span>
+    </label>
+    <label>
+      <input type="checkbox" (change) = "updateChecks('hearts', $event.target.checked)" formControlName="hearts" />
+      <span>Heart</span>
+    </label>
+    <label>
+      <input type="checkbox" (change) = "updateChecks('spades', $event.target.checked)" formControlName="spades" />
+      <span>Spade</span>
+    </label>
+    <p *ngIf="warning_" style="color: red;">Warning! You need to select a Card Suit.</p>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      Number of Cards in a Hand:
+      <div class="input-field inline">
+        <input max="{{max_cards}}" min="1" id="hand_number" formControlName="number" type="number" class="validate col s12">
+        <!-- <label for="hand_number"></label> -->
+        <span class="helper-text" data-error="invalid number"></span>
+      <p *ngIf="warning" style="color: red;">Warning! You need to select a suitable card in a hand, the current max is {{max_cards}}.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-slider">
+    <div id="slider" #slider></div>
+  </div>
+  </div>
+  <a (click)="takeCard()" class="waves-effect waves-light btn">Pick a Card</a>
+</form>

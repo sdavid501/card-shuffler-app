@@ -1,0 +1,15 @@
+label {
+    margin-right: 3em;
+}
+
+.card-slider{
+    width: 400px;
+    text-align: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.filter{
+    margin: 20px;
+}
+
