@@ -119,11 +119,11 @@ export class HomeComponent implements OnInit {
     if(this.cardForm.controls['suit'].get('spades').value){
       this.suit.push('spades');
     }   
-    this.max_cards = this.suit.length * (this.cardForm.controls['range'].get('max').value - this.cardForm.controls['range'].get('min').value);
+    this.max_cards = this.suit.length * (this.cardForm.controls['range'].get('max').value - this.cardForm.controls['range'].get('min').value + 1);
     console.log(this.max_cards);
     console.log("this.max_cards");
     if(this.suit && this.suit.length && this.cardForm.controls['number'].value && 
-      (this.suit.length * (this.cardForm.controls['range'].get('max').value - this.cardForm.controls['range'].get('min').value) >= this.cardForm.controls['number'].value)){
+      (this.max_cards) >= this.cardForm.controls['number'].value){
         this.warning = false;
       this._cards = new Array<number>();
       this._suit_cards = new Array<Array<number>>();
